@@ -6,24 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <TextView
-       android:id="@+id/tvBase"
-       android:text="Base"
-        app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintLeft_toLeftOf="parent"
-       android:layout_marginRight="20dp"
-       android:layout_marginTop="30dp"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvBase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="94dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+
+        android:text="Base"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTipval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="12%"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@+id/tvBase"
+        app:layout_constraintTop_toBottomOf="@+id/tvBase" />
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        tools:text="21%"
+        app:layout_constraintEnd_toEndOf="@+id/tvBase"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipval" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Total"
+        app:layout_constraintEnd_toEndOf="@+id/tvBase"
+        app:layout_constraintTop_toBottomOf="@+id/tvTip" />
+
+    <EditText
+        android:id="@+id/etBaseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint="Base amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBase"
+        app:layout_constraintStart_toEndOf="@+id/tvBase"
+        app:layout_constraintTop_toTopOf="@+id/tvBase"
+        tools:layout_editor_absoluteY="10dp" />
+
+    <SeekBar
+        android:id="@+id/sbTip"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:max="30"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTipval"
+        app:layout_constraintStart_toStartOf="@+id/etBaseAmount" />
+
+    <TextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="tip amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTip"
+        app:layout_constraintStart_toStartOf="@+id/sbTip" />
+
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="total amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotal"
+        app:layout_constraintStart_toStartOf="@+id/tvTipAmount"
+        app:layout_constraintTop_toTopOf="@+id/tvTotal" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
